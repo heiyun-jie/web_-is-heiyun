@@ -51,12 +51,14 @@ $(function () {
         };
         console.log(a);
         $.post('/api/reguser', a, function (res) {
-            if (res !== 0) {
+            if (res.status !== 0) {
                 return layer.msg(res.message);
             }
             layer.msg('注册成功');
+            console.log(1111111111);
             // 模拟人的点击行为 
-            $('#link_login').click()
+            console.log($('#link_login'));
+            $('#link_login')[0].click()
         })
     })
     // 登录表单
